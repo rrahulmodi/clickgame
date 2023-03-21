@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="games.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="screen1" class="screen">
+        <button id="btn">Start Game</button>
+      </div>
+      <div id="screen2" class="screen">
+        <div class="class">
+          <img class="imgs1" src="download (2).jpeg" alt="" />
+          <img
+            class="imgs1"
+            src="512-5126958_iron-man-avengers-png-transparent-png.png"
+            alt=""
+          />
+          <img
+            class="imgs1"
+            src="512-5126958_iron-man-avengers-png-transparent-png.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div id="screen3">
+        <p>Timer<span class="timer"></span></p>
+        <p>Score<span class="score"></span></p>
+      </div>
+      <div class="imagesPopup"></div>
+      <div id="screen4"></div>
+    </div>
+
+    <script>
+      const btn = document.querySelector("#btn");
+      const screen1 = document.querySelector("#screen1");
+      const screen2 = document.querySelector("#screen2");
+      const screen3 = document.querySelector("#screen3");
+      const timerP = document.querySelector(".timer");
+      const scoreP = document.querySelector(".score");
+      var selectedimage = "";
+      let timer = 0;
+      let score = 0;
+
+      btn.onclick = () => {
+        screen1.style.display = "none";
+        screen2.style.display = "flex";
+      };
+      const img_src = document.querySelectorAll(".imgs1");
+      for (let i = 0; i < img_src.length; i++) {
+        img_src[i].onclick = () => {
+          selectedimage = img_src[i].src;
+          screen2.style.display = "none";
+          screen3.style.display = "flex";
+        };
+      }
+      let x = setInterval(() => {
+        if (timer === 10) clearInterval(x);
+        timerP.innerHTML = ++timer;
+        if (timer == 11) {
+          alert("Hello! Your score is" + score + "!");
+          screen3.style.display = "none";
+          screen4.style.display = "flex";
+        }
+      }, 1000);
+      setInterval(() => {
+        const img = document.createElement("img");
+        img.setAttribute("src", selectedimage);
+        img.setAttribute("onclick", "removeImage(this)");
+        img.style.left = getRandomLeft();
+        img.style.top = getRandomTop();
+        screen3.append(img);
+      }, 800);
+      function removeImage(element) {
+        element.remove();
+        scoreP.innerHTML = ++score;
+      }
+      function getRandomLeft() {
+        return Math.random() * window.innerWidth + "px";
+      }
+      function getRandomTop() {
+        return Math.random() * window.innerHeight + "px";
+      }
+    </script>
+  </body>
+</html>

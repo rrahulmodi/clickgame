@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Display Text when the Checkbox is Checked</h3>
+    <input
+      type="checkbox"
+      id="check1"
+      onclick="checkFunction1()"
+      name="lang"
+    />Image
+    <span id="message1" style="display: none"
+      ><input id="inp1" type="text"
+    /></span>
+
+    <input
+      type="checkbox"
+      id="check2"
+      onclick="checkFunction2()"
+      name="lang"
+    />Graph
+    <span id="message2" style="display: none"
+      ><input id="inp2" type="text"
+    /></span>
+
+    <input
+      type="checkbox"
+      id="check3"
+      onclick="checkFunction3()"
+      name="lang"
+    />Line
+    <span id="message3" style="display: none"
+      ><input id="inp3" type="text"
+    /></span>
+
+    <button id="btn">Uncheck</button>
+
+    <script>
+      function checkFunction1() {
+        if (check1.checked == true) {
+          message1.style.display = "block";
+        } else if (check1.checked == false) {
+          message1.style.display = "none";
+        }
+      }
+      function checkFunction2() {
+        if (check2.checked == true) {
+          message2.style.display = "block";
+        } else if (check2.checked == false) {
+          message2.style.display = "none";
+        }
+      }
+      function checkFunction3() {
+        if (check3.checked == true) {
+          message3.style.display = "block";
+        } else if (check3.checked == false) {
+          message3.style.display = "none";
+        }
+      }
+      btn.onclick = () => {
+        check1.checked = false;
+        check2.checked = false;
+        check3.checked = false;
+        message1.style.display = "none";
+        message2.style.display = "none";
+        message3.style.display = "none";
+        inp1.value = "";
+        inp2.value = "";
+        inp3.value = "";
+      };
+      //     else if (check3.checked == true) {
+      //       message3.style.display = "block";
+      //     } else {
+      //       message.style.display = "none";
+      //     }
+      //   }
+    </script>
+  </body>
+</html>

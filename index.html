@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- <input type="checkbox" placeholder="1st Number" id="no1">
+        <select name="" id="op">
+             <option value="">Operation</option>
+            <option value="+"> + </option>
+            <option value="-"> - </option>
+            <option value="/"> / </option>
+            <option value="*"> * </option>
+            <option value="%"> % </option> -->
+        <!-- </select> -->
+        <input type="checkbox" id="check1" name="vehicle1" value="Bike" onclick= "checkFunction()">
+<label for="check1"> I have a bike</label>
+<input type="text" name="" id="textbox1">
+<input type="checkbox" id="check2" name="vehicle2" value="Car" onclick= "checkFunction()">
+<label for="check2"> I have a car</label>
+<input type="checkbox" id="check3" name="vehicle3" value="Boat" onclick= "checkFunction()">
+<label for="check3"> I have a boat</label>
+        <button id="btn">Uncheckall</button>
+        <p>
+        </p>
+        <p id= "message1" style= "display:none"> Image Option is Checked Now!</p>
+<p id= "message2" style= "display:none"> Graph Option is Checked Now!</p>
+<p id= "message3" style= "display:none"> Line Option is Checked Now!</p>
+<script>
+
+    // let btn = document.querySelector("button")
+    //     let vehicle1 = document.querySelector("vehicle1")
+    //     let vehicle2 = document.querySelector("vehicle2")
+    //     let vehicle3 = document.querySelector("vehicle3")
+// let op= document.querySelector("#op");
+
+// vehicle1.onclick = () => {
+//     if (vehicle1.checked == true)
+//     {
+//  vehicle1.style.checkbox = vehicle1.style.input; 
+//     }
+// }
+function checkFunction(){
+ if (check1.checked == true){
+ check1.style.input = "text";                      
+}
+else if (check2.checked == true){
+ message2.style.display = "block";                      
+}
+else if (check3.checked == true){
+ message3.style.display = "block";                      
+}
+else{
+ message.style.display = "none";
+}
+}
+    // let noo1 = Number(no1.value);
+    // let noo2 = Number(no2.value);
+    // let opp = op.value;
+    //         if ( opp =='+')
+    //         {
+    //             console.log(noo1 + noo2)
+    //         }
+    //         else if ( opp =='-') 
+    //           {
+    //             console.log(noo1 - noo2)
+    //         }
+    //         else if ( opp =='*') 
+    //         {
+    //             console.log(noo1 * noo2)
+    //         }
+    //         else if ( opp =='/') 
+    //         {
+    //             console.log(noo1 / noo2)
+    //         }
+    //         else if( opp =='%') 
+    //         {
+    //             console.log(noo1 % noo2)
+    //         }
+    //     }
+        </script>
+
+<!-- <script>
+    const para = document.querySelectorAll("p")
+
+    for(let i=0; i<para.length; i++)
+    {
+    para[i].onclick = () => {
+document.querySelector("h2").innerHTML= para[i].innerHTML
+    }
+    }
+
+ document.querySelector('h2').onclick = () => {
+    document.querySelector("h2").innerHTML=''
+ }
+
+
+
+    </script> --!
+            
+        </body>
+        </html>
+</body>
+</html>
